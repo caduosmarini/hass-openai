@@ -1,0 +1,262 @@
+{
+    "config": {
+        "error": {
+            "api_key_required": "Informe a chave da OpenAI ou do serviço na URL escolhida.",
+            "cannot_connect": "Falha ao conectar",
+            "invalid_auth": "Autentica\u00e7\u00e3o inv\u00e1lida",
+            "invalid_base_url": "Informe uma URL HTTP ou HTTPS sem credenciais, parâmetros de consulta ou fragmento.",
+            "unknown": "Erro inesperado"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "api_key": "Chave de API"
+                },
+                "data_description": {
+                    "api_key": "A chave de API do serviço configurado."
+                },
+                "description": "Reautentica\u00e7\u00e3o necess\u00e1ria. Insira sua chave de API atualizada."
+            },
+            "reconfigure": {
+                "data": {
+                    "api_key": "Chave de API",
+                    "base_url": "URL base da API",
+                    "elevenlabs_api_key": "Chave de API da ElevenLabs",
+                    "remove_elevenlabs_key": "Remover a chave salva da ElevenLabs"
+                },
+                "data_description": {
+                    "api_key": "Preencha ao mudar a URL base. Deixe em branco para manter a chave salva na URL atual.",
+                    "base_url": "Deixe em branco para usar https://api.openai.com/v1. Inclua o caminho da API, como /v1.",
+                    "elevenlabs_api_key": "Opcional. Deixe em branco para manter a chave salva da ElevenLabs."
+                },
+                "description": "Atualize a conexão com a API ou habilite a ElevenLabs para áudio."
+            },
+            "user": {
+                "data": {
+                    "api_key": "Chave de API",
+                    "base_url": "URL base da API",
+                    "elevenlabs_api_key": "Chave de API da ElevenLabs"
+                },
+                "data_description": {
+                    "api_key": "Use a chave do serviço na URL escolhida.",
+                    "base_url": "Deixe em branco para usar https://api.openai.com/v1. Inclua o caminho da API, como /v1.",
+                    "elevenlabs_api_key": "Opcional. Habilita o reconhecimento e a síntese de voz da ElevenLabs."
+                },
+                "description": "Conecte à OpenAI ou a um serviço compatível. [Como criar uma chave de API da OpenAI]({instructions_url})."
+            }
+        }
+    },
+    "config_subentries": {
+        "ai_task_data": {
+            "abort": {
+                "entry_not_loaded": "N\u00e3o \u00e9 poss\u00edvel adicionar itens enquanto a configura\u00e7\u00e3o estiver desabilitada."
+            },
+            "step": {
+                "init": {
+                    "data": {
+                        "chat_model": "Modelo",
+                        "max_tokens": "M\u00e1ximo de tokens a retornar na resposta",
+                        "recommended": "Configura\u00e7\u00f5es recomendadas do modelo",
+                        "store_responses": "Armazenar solicita\u00e7\u00f5es e respostas na OpenAI",
+                        "temperature": "Temperatura",
+                        "top_p": "Top P"
+                    },
+                    "data_description": {
+                        "store_responses": "Se habilitado, as solicita\u00e7\u00f5es e respostas s\u00e3o armazenadas pela OpenAI e ficam vis\u00edveis nos logs do seu dashboard da OpenAI"
+                    }
+                },
+                "model": {
+                    "data": {
+                        "code_interpreter": "Habilitar ferramenta de interpreta\u00e7\u00e3o de c\u00f3digo",
+                        "pro_mode": "Modo Pro",
+                        "web_search": "Habilitar pesquisa na web"
+                    },
+                    "data_description": {
+                        "inline_citations": "Se desabilitado, \u00e9 adicionada uma instru\u00e7\u00e3o extra para pedir ao modelo que n\u00e3o inclua cita\u00e7\u00f5es de fontes",
+                        "pro_mode": "Realizar mais trabalho do modelo para melhorar a confiabilidade em tarefas dif\u00edceis e retornar uma \u00fanica resposta final"
+                    }
+                }
+            }
+        },
+        "ai_task_evaluate": {
+            "abort": {
+                "entry_not_loaded": "N\u00e3o \u00e9 poss\u00edvel adicionar itens enquanto a configura\u00e7\u00e3o estiver desabilitada."
+            },
+            "entry_type": "Avalia\u00e7\u00e3o de tarefa de IA",
+            "initiate_flow": {
+                "reconfigure": "Reconfigurar avalia\u00e7\u00e3o de tarefa de IA",
+                "user": "Adicionar avalia\u00e7\u00e3o de tarefa de IA"
+            },
+            "step": {
+                "init": {
+                    "data": {
+                        "chat_model": "Modelo",
+                        "name": "Nome"
+                    },
+                    "title": "Configurar avalia\u00e7\u00e3o"
+                }
+            }
+        },
+        "conversation": {
+            "abort": {
+                "entry_not_loaded": "N\u00e3o \u00e9 poss\u00edvel adicionar itens enquanto a configura\u00e7\u00e3o estiver desabilitada."
+            },
+            "step": {
+                "init": {
+                    "data": {
+                        "chat_model": "Modelo",
+                        "llm_hass_api": "Ferramentas de IA",
+                        "max_tokens": "M\u00e1ximo de tokens a retornar na resposta",
+                        "recommended": "Configura\u00e7\u00f5es recomendadas do modelo",
+                        "store_responses": "Armazenar solicita\u00e7\u00f5es e respostas na OpenAI",
+                        "temperature": "Temperatura",
+                        "top_p": "Top P"
+                    },
+                    "data_description": {
+                        "llm_hass_api": "**Controle de dispositivos** acessa apenas as entidades que voc\u00ea exp\u00f5e aos assistentes de voz. **Home Assistant** acessa tudo e s\u00f3 funciona para administradores, n\u00e3o para dispositivos de assistente de voz.",
+                        "prompt": "Instrua como o LLM deve responder. Isso pode ser um template.",
+                        "store_responses": "Se habilitado, as solicita\u00e7\u00f5es e respostas s\u00e3o armazenadas pela OpenAI e ficam vis\u00edveis nos logs do seu dashboard da OpenAI"
+                    }
+                },
+                "model": {
+                    "data": {
+                        "code_interpreter": "Habilitar ferramenta de interpreta\u00e7\u00e3o de c\u00f3digo",
+                        "pro_mode": "Modo Pro",
+                        "web_search": "Habilitar pesquisa na web"
+                    },
+                    "data_description": {
+                        "inline_citations": "Se desabilitado, \u00e9 adicionada uma instru\u00e7\u00e3o extra para pedir ao modelo que n\u00e3o inclua cita\u00e7\u00f5es de fontes",
+                        "pro_mode": "Realizar mais trabalho do modelo para melhorar a confiabilidade em tarefas dif\u00edceis e retornar uma \u00fanica resposta final"
+                    }
+                }
+            }
+        },
+        "stt": {
+            "abort": {
+                "elevenlabs_key_required": "Informe a chave da ElevenLabs em Reconfigurar na entrada da integração.",
+                "entry_not_loaded": "N\u00e3o \u00e9 poss\u00edvel adicionar itens enquanto a configura\u00e7\u00e3o estiver desabilitada."
+            },
+            "entry_type": "Convers\u00e3o de fala em texto",
+            "error": {
+                "model_required": "Informe o ID do modelo de transcrição."
+            },
+            "initiate_flow": {
+                "reconfigure": "Reconfigurar servi\u00e7o de convers\u00e3o de fala em texto",
+                "user": "Adicionar servi\u00e7o de convers\u00e3o de fala em texto"
+            },
+            "step": {
+                "elevenlabs": {
+                    "title": "Transcrição com ElevenLabs",
+                    "data": {
+                        "chat_model": "Modelo",
+                        "custom_audio_model": "ID do modelo",
+                        "name": "Nome"
+                    }
+                },
+                "init": {
+                    "data": {
+                        "chat_model": "Modelo",
+                        "custom_audio_model": "ID do modelo",
+                        "name": "Nome",
+                        "prompt": "Instruções"
+                    }
+                },
+                "provider": {
+                    "data": {
+                        "provider": "Provedor de reconhecimento de voz"
+                    }
+                }
+            }
+        },
+        "tts": {
+            "abort": {
+                "elevenlabs_key_required": "Informe a chave da ElevenLabs em Reconfigurar na entrada da integração.",
+                "entry_not_loaded": "N\u00e3o \u00e9 poss\u00edvel adicionar itens enquanto a configura\u00e7\u00e3o estiver desabilitada."
+            },
+            "entry_type": "Convers\u00e3o de texto em fala",
+            "error": {
+                "model_required": "Informe o ID do modelo de síntese de voz.",
+                "voice_required": "Informe o ID da voz da ElevenLabs."
+            },
+            "initiate_flow": {
+                "reconfigure": "Reconfigurar servi\u00e7o de convers\u00e3o de texto em fala",
+                "user": "Adicionar servi\u00e7o de convers\u00e3o de texto em fala"
+            },
+            "step": {
+                "elevenlabs": {
+                    "title": "Síntese de voz com ElevenLabs",
+                    "data": {
+                        "chat_model": "Modelo",
+                        "custom_audio_model": "ID do modelo",
+                        "elevenlabs_voice_id": "ID da voz",
+                        "name": "Nome"
+                    },
+                    "data_description": {
+                        "elevenlabs_voice_id": "Copie o ID de uma voz disponível na sua conta da ElevenLabs."
+                    }
+                },
+                "init": {
+                    "data": {
+                        "chat_model": "Modelo",
+                        "custom_audio_model": "ID do modelo",
+                        "name": "Nome",
+                        "prompt": "Instruções",
+                        "tts_speed": "Velocidade"
+                    }
+                },
+                "provider": {
+                    "data": {
+                        "provider": "Provedor de síntese de voz"
+                    }
+                }
+            }
+        }
+    },
+    "selector": {
+        "audio_model": {
+            "options": {
+                "__other__": "Outro",
+                "eleven_flash_v2_5": "Eleven Flash v2.5",
+                "eleven_multilingual_v2": "Eleven Multilingual v2",
+                "eleven_v3": "Eleven v3",
+                "eleven_v4": "Eleven v4",
+                "gpt-4o-mini-transcribe": "GPT-4o mini Transcribe",
+                "gpt-4o-mini-tts": "GPT-4o mini TTS",
+                "gpt-4o-transcribe": "GPT-4o Transcribe",
+                "gpt-transcribe": "GPT-Transcribe",
+                "scribe_v2": "Scribe v2",
+                "scribe_v3": "Scribe v3",
+                "tts-1": "TTS-1",
+                "tts-1-hd": "TTS-1 HD",
+                "whisper-1": "Whisper"
+            }
+        },
+        "provider": {
+            "options": {
+                "elevenlabs": "ElevenLabs",
+                "openai": "OpenAI"
+            }
+        },
+        "reasoning_effort": {
+            "options": {
+                "max": "M\u00e1ximo"
+            }
+        },
+        "reasoning_summary": {
+            "options": {
+                "auto": "Auto"
+            }
+        },
+        "service_tier": {
+            "options": {
+                "auto": "Auto",
+                "ultrafast": "Ultrafast"
+            }
+        },
+        "verbosity": {
+            "options": {
+                "high": "Alta"
+            }
+        }
+    }
+}

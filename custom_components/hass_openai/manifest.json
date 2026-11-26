@@ -1,0 +1,27 @@
+{
+  "domain": "hass_openai",
+  "name": "OpenAI Personalizado",
+  "after_dependencies": [
+    "assist_pipeline",
+    "intent"
+  ],
+  "categories": [
+    "ai_voice.ai_models",
+    "ai_voice.speech"
+  ],
+  "config_flow": true,
+  "connectivity": [
+    "cloud"
+  ],
+  "dependencies": [
+    "conversation"
+  ],
+  "documentation": "https://github.com/caduosmarini/hass-openai",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/caduosmarini/hass-openai/issues",
+  "requirements": [
+    "openai==3.26.0"
+  ],
+  "version": "0.4.0"
+}

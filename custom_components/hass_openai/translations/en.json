@@ -1,0 +1,355 @@
+{
+  "config": {
+    "abort": {
+      "already_configured": "Service is already configured"
+    },
+    "error": {
+      "api_key_required": "Enter the API key for OpenAI or the selected endpoint.",
+      "cannot_connect": "Failed to connect",
+      "invalid_auth": "Invalid authentication",
+      "invalid_base_url": "Enter an HTTP or HTTPS API URL without credentials, a query string, or a fragment.",
+      "unknown": "Unexpected error"
+    },
+    "step": {
+      "reauth_confirm": {
+        "data": {
+          "api_key": "API key"
+        },
+        "data_description": {
+          "api_key": "The API key for the configured service."
+        },
+        "description": "Reauthentication required. Please enter your updated API key."
+      },
+      "reconfigure": {
+        "data": {
+          "api_key": "API key",
+          "base_url": "API base URL",
+          "elevenlabs_api_key": "ElevenLabs API key",
+          "remove_elevenlabs_key": "Remove the saved ElevenLabs key"
+        },
+        "data_description": {
+          "api_key": "Required when changing the API base URL. Leave blank to keep the saved key at the current URL.",
+          "base_url": "Leave blank to use https://api.openai.com/v1. Include the API path, such as /v1.",
+          "elevenlabs_api_key": "Optional. Leave blank to keep the saved ElevenLabs key."
+        },
+        "description": "Update the API connection or enable ElevenLabs for audio."
+      },
+      "user": {
+        "data": {
+          "api_key": "API key",
+          "base_url": "API base URL",
+          "elevenlabs_api_key": "ElevenLabs API key"
+        },
+        "data_description": {
+          "api_key": "Use the key for the service at the selected URL.",
+          "base_url": "Leave blank to use https://api.openai.com/v1. Include the API path, such as /v1.",
+          "elevenlabs_api_key": "Optional. Enables ElevenLabs for speech recognition and synthesis."
+        },
+        "description": "Connect to OpenAI or a compatible service. [How to create an OpenAI API key]({instructions_url})."
+      }
+    }
+  },
+  "config_subentries": {
+    "ai_task_data": {
+      "abort": {
+        "entry_not_loaded": "Cannot add things while the configuration is disabled."
+      },
+      "entry_type": "AI task",
+      "error": {
+        "code_interpreter_minimal_reasoning": "Code interpreter is not supported with minimal reasoning effort",
+        "model_not_supported": "This model is not supported, please select a different model",
+        "web_search_minimal_reasoning": "Web search is currently not supported with minimal reasoning effort"
+      },
+      "initiate_flow": {
+        "reconfigure": "Reconfigure AI task",
+        "user": "Add AI task"
+      },
+      "step": {
+        "init": {
+          "data": {
+            "chat_model": "Model",
+            "max_tokens": "Maximum tokens to return in response",
+            "name": "Name",
+            "recommended": "Recommended model settings",
+            "store_responses": "Store requests and responses in OpenAI",
+            "temperature": "Temperature",
+            "top_p": "Top P"
+          },
+          "data_description": {
+            "store_responses": "If enabled, requests and responses are stored by OpenAI and visible in your OpenAI dashboard logs"
+          }
+        },
+        "model": {
+          "data": {
+            "code_interpreter": "Enable code interpreter tool",
+            "image_model": "Image generation model",
+            "inline_citations": "Include links in web search results",
+            "pro_mode": "Pro mode",
+            "reasoning_effort": "Reasoning effort",
+            "reasoning_summary": "Reasoning summary",
+            "search_context_size": "Search context size",
+            "service_tier": "Service tier",
+            "user_location": "Include home location",
+            "web_search": "Enable web search"
+          },
+          "data_description": {
+            "code_interpreter": "This tool, also known as the python tool to the model, allows it to run code to answer questions",
+            "image_model": "The model to use when generating images",
+            "inline_citations": "If disabled, additional prompt is added to ask the model to not include source citations",
+            "pro_mode": "Perform more model work to improve reliability on difficult tasks and return a single final answer",
+            "reasoning_effort": "How many reasoning tokens the model should generate before creating a response to the prompt",
+            "reasoning_summary": "Controls the length and detail of reasoning summaries provided by the model",
+            "search_context_size": "High level guidance for the amount of context window space to use for the search",
+            "service_tier": "Controls the cost and response time",
+            "user_location": "Refine search results based on geography",
+            "web_search": "Allow the model to search the web for the latest information before generating a response"
+          },
+          "title": "Model-specific options"
+        }
+      }
+    },
+    "ai_task_evaluate": {
+      "abort": {
+        "entry_not_loaded": "Cannot add things while the configuration is disabled."
+      },
+      "entry_type": "AI task evaluation",
+      "initiate_flow": {
+        "reconfigure": "Reconfigure AI task evaluation",
+        "user": "Add AI task evaluation"
+      },
+      "step": {
+        "init": {
+          "data": {
+            "chat_model": "Model",
+            "name": "Name"
+          },
+          "title": "Configure evaluation"
+        }
+      }
+    },
+    "conversation": {
+      "abort": {
+        "entry_not_loaded": "Cannot add things while the configuration is disabled."
+      },
+      "entry_type": "Conversation agent",
+      "error": {
+        "code_interpreter_minimal_reasoning": "Code interpreter is not supported with minimal reasoning effort",
+        "model_not_supported": "This model is not supported, please select a different model",
+        "web_search_minimal_reasoning": "Web search is currently not supported with minimal reasoning effort"
+      },
+      "initiate_flow": {
+        "reconfigure": "Reconfigure conversation agent",
+        "user": "Add conversation agent"
+      },
+      "step": {
+        "init": {
+          "data": {
+            "chat_model": "Model",
+            "llm_hass_api": "AI tools",
+            "max_tokens": "Maximum tokens to return in response",
+            "name": "Name",
+            "prompt": "Instructions",
+            "recommended": "Recommended model settings",
+            "store_responses": "Store requests and responses in OpenAI",
+            "temperature": "Temperature",
+            "top_p": "Top P"
+          },
+          "data_description": {
+            "llm_hass_api": "**Device control** only accesses the entities you expose to voice assistants. **Home Assistant** accesses everything and only works for administrators, not voice assistant devices.",
+            "prompt": "Instruct how the LLM should respond. This can be a template.",
+            "store_responses": "If enabled, requests and responses are stored by OpenAI and visible in your OpenAI dashboard logs"
+          }
+        },
+        "model": {
+          "data": {
+            "code_interpreter": "Enable code interpreter tool",
+            "image_model": "Image generation model",
+            "inline_citations": "Include links in web search results",
+            "pro_mode": "Pro mode",
+            "reasoning_effort": "Reasoning effort",
+            "reasoning_summary": "Reasoning summary",
+            "search_context_size": "Search context size",
+            "service_tier": "Service tier",
+            "user_location": "Include home location",
+            "web_search": "Enable web search"
+          },
+          "data_description": {
+            "code_interpreter": "This tool, also known as the python tool to the model, allows it to run code to answer questions",
+            "image_model": "The model to use when generating images",
+            "inline_citations": "If disabled, additional prompt is added to ask the model to not include source citations",
+            "pro_mode": "Perform more model work to improve reliability on difficult tasks and return a single final answer",
+            "reasoning_effort": "How many reasoning tokens the model should generate before creating a response to the prompt",
+            "reasoning_summary": "Controls the length and detail of reasoning summaries provided by the model",
+            "search_context_size": "High level guidance for the amount of context window space to use for the search",
+            "service_tier": "Controls the cost and response time",
+            "user_location": "Refine search results based on geography",
+            "web_search": "Allow the model to search the web for the latest information before generating a response"
+          },
+          "title": "Model-specific options"
+        }
+      }
+    },
+    "stt": {
+      "abort": {
+        "elevenlabs_key_required": "Add an ElevenLabs API key in the integration's reconfiguration menu.",
+        "entry_not_loaded": "Cannot add things while the configuration is disabled."
+      },
+      "entry_type": "Speech-to-text",
+      "error": {
+        "model_required": "Enter a transcription model ID."
+      },
+      "initiate_flow": {
+        "reconfigure": "Reconfigure speech-to-text service",
+        "user": "Add speech-to-text service"
+      },
+      "step": {
+        "elevenlabs": {
+          "title": "ElevenLabs speech-to-text",
+          "data": {
+            "chat_model": "Model",
+            "custom_audio_model": "Model ID",
+            "name": "Name"
+          }
+        },
+        "provider": {
+          "data": {
+            "provider": "Speech recognition provider"
+          }
+        },
+        "init": {
+          "data": {
+            "chat_model": "Model",
+            "custom_audio_model": "Model ID",
+            "name": "Name",
+            "prompt": "Instructions"
+          },
+          "data_description": {
+            "chat_model": "The model to use to transcribe speech.",
+            "prompt": "Use this prompt to improve the quality of the transcripts. Translate to the pipeline language for best results. See the documentation for more details."
+          }
+        }
+      }
+    },
+    "tts": {
+      "abort": {
+        "elevenlabs_key_required": "Add an ElevenLabs API key in the integration's reconfiguration menu.",
+        "entry_not_loaded": "Cannot add things while the configuration is disabled."
+      },
+      "entry_type": "Text-to-speech",
+      "error": {
+        "model_required": "Enter a speech synthesis model ID.",
+        "voice_required": "Enter an ElevenLabs Voice ID."
+      },
+      "initiate_flow": {
+        "reconfigure": "Reconfigure text-to-speech service",
+        "user": "Add text-to-speech service"
+      },
+      "step": {
+        "elevenlabs": {
+          "title": "ElevenLabs text-to-speech",
+          "data": {
+            "chat_model": "Model",
+            "custom_audio_model": "Model ID",
+            "elevenlabs_voice_id": "Voice ID",
+            "name": "Name"
+          },
+          "data_description": {
+            "elevenlabs_voice_id": "Copy the ID of a voice available in your ElevenLabs account."
+          }
+        },
+        "provider": {
+          "data": {
+            "provider": "Speech synthesis provider"
+          }
+        },
+        "init": {
+          "data": {
+            "chat_model": "Model",
+            "custom_audio_model": "Model ID",
+            "name": "Name",
+            "prompt": "Instructions",
+            "tts_speed": "Speed"
+          },
+          "data_description": {
+            "prompt": "Control aspects of speech, including accent, emotional range, intonation, impressions, speed of speech, tone, whispering, and more",
+            "tts_speed": "Speed of the generated speech"
+          }
+        }
+      }
+    }
+  },
+  "issues": {
+    "organization_verification_required": {
+      "description": "Your organization must be verified to use this model. Please go to {platform_settings} and select Verify Organization. If you just verified, it can take up to 15 minutes for access to propagate.",
+      "title": "Organization verification required"
+    }
+  },
+  "selector": {
+    "audio_model": {
+      "options": {
+        "__other__": "Other",
+        "eleven_flash_v2_5": "Eleven Flash v2.5",
+        "eleven_multilingual_v2": "Eleven Multilingual v2",
+        "eleven_v3": "Eleven v3",
+        "eleven_v4": "Eleven v4",
+        "gpt-4o-mini-transcribe": "GPT-4o mini Transcribe",
+        "gpt-4o-mini-tts": "GPT-4o mini TTS",
+        "gpt-4o-transcribe": "GPT-4o Transcribe",
+        "gpt-transcribe": "GPT-Transcribe",
+        "scribe_v2": "Scribe v2",
+        "scribe_v3": "Scribe v3",
+        "tts-1": "TTS-1",
+        "tts-1-hd": "TTS-1 HD",
+        "whisper-1": "Whisper"
+      }
+    },
+    "provider": {
+      "options": {
+        "elevenlabs": "ElevenLabs",
+        "openai": "OpenAI"
+      }
+    },
+    "reasoning_effort": {
+      "options": {
+        "high": "High",
+        "low": "Low",
+        "max": "Max",
+        "medium": "Medium",
+        "minimal": "Minimal",
+        "none": "None",
+        "xhigh": "X-High"
+      }
+    },
+    "reasoning_summary": {
+      "options": {
+        "auto": "Auto",
+        "concise": "Concise",
+        "detailed": "Detailed",
+        "off": "Off"
+      }
+    },
+    "search_context_size": {
+      "options": {
+        "high": "High",
+        "low": "Low",
+        "medium": "Medium"
+      }
+    },
+    "service_tier": {
+      "options": {
+        "auto": "Auto",
+        "default": "Standard",
+        "flex": "Flex",
+        "priority": "Priority",
+        "ultrafast": "Ultrafast"
+      }
+    },
+    "verbosity": {
+      "options": {
+        "high": "High",
+        "low": "Low",
+        "medium": "Medium"
+      }
+    }
+  }
+}
