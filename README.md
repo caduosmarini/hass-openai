@@ -4,7 +4,7 @@ Integração personalizada para usar agentes de conversa e tarefas de IA da Open
 
 ## Instalação pelo Marketplace
 
-Requer Home Assistant Core 2026.11.3 ou posterior.
+Requer Home Assistant Core 2026.11.2 ou posterior.
 
 1. Abra o [OpenAI Personalizado no Marketplace](https://my.home-assistant.io/redirect/marketplace_repository/?owner=caduosmarini&repository=hass-openai&category=integration).
 2. Conecte o GitHub se solicitado. Também é possível adicionar `caduosmarini/hass-openai` em **Configurações → Marketplace → Adicionar por link**.
